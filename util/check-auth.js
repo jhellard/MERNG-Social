@@ -3,6 +3,7 @@ const { AuthenticationError } = require("apollo-server");
 const jwt = require("jsonwebtoken");
 const { SECRET_KEY } = require("../keys");
 
+// Using JSONWebToken to authenticate users throughout most aspects of the app
 module.exports = (context) => {
   const authHeader = context.req.headers.authorization;
   if (authHeader) {
