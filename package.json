@@ -1,9 +1,10 @@
 {
-  "name": "MERNG-Social",
+  "name": "merng-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "temp": "node index",
     "start": "nodemon index"
   },
   "keywords": [],
