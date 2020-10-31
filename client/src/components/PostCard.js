@@ -17,11 +17,16 @@ const PostCard = ({
     <Card fluid>
       <Card.Content>
         <Image
+          circular
           floated="right"
           size="mini"
           src="https://react.semantic-ui.com/images/avatar/large/molly.png"
+          as={Link}
+          to={`/user/${username}`}
         />
-        <Card.Header>{username}</Card.Header>
+        <Card.Header as={Link} to={`/user/${username}`}>
+          {username}
+        </Card.Header>
         <Card.Meta as={Link} to={`/posts/${id}`}>
           {moment(createdAt).fromNow(true)}
         </Card.Meta>

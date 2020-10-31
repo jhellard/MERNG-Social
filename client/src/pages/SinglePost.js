@@ -11,6 +11,7 @@ import {
   Form,
 } from "semantic-ui-react";
 import moment from "moment";
+import { Link } from "react-router-dom";
 
 import { AuthContext } from "../context/auth";
 
@@ -66,15 +67,20 @@ const SinglePost = (props) => {
         <Grid.Row>
           <Grid.Column width={2}>
             <Image
+              circular
               src="https://react.semantic-ui.com/images/avatar/large/molly.png"
               size="small"
               float="right"
+              as={Link}
+              to={`/user/${username}`}
             />
           </Grid.Column>
           <Grid.Column width={10}>
             <Card fluid>
               <Card.Content>
-                <Card.Header>{username}</Card.Header>
+                <Card.Header as={Link} to={`/user/${username}`}>
+                  {username}
+                </Card.Header>
                 <Card.Meta>{moment(createdAt).fromNow()}</Card.Meta>
                 <Card.Description>{body}</Card.Description>
               </Card.Content>
@@ -82,11 +88,7 @@ const SinglePost = (props) => {
               <Card.Content extra>
                 <LikeButton user={user} post={{ id, likeCount, likes }} />
                 <MyPopup content="Comment on post">
-                  <Button
-                    as="div"
-                    labelPosition="right"
-                    onClick={() => console.log("Comment on post")}
-                  >
+                  <Button as="div" labelPosition="right">
                     <Button basic color="blue">
                       <Icon name="comments" />
                     </Button>
