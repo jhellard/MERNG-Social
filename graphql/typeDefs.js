@@ -21,6 +21,7 @@ module.exports = gql`
     token: String!
     username: String!
     createdAt: String!
+    stars: Int!
   }
   type Comment {
     id: ID!

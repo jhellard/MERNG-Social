@@ -62,11 +62,10 @@ const UserPage = (props) => {
             <p>Loading posts...</p>
           ) : (
             posts &&
-            posts.map((post) => (
-              <Grid.Column key={post.id} style={{ marginBottom: 20 }}>
-                {user === post.username && <PostCard post={post} />}
-              </Grid.Column>
-            ))
+            posts.map(
+              (post) =>
+                user === post.username && <PostCard post={post} key={post.id} />
+            )
           )}
         </Grid.Column>
       </Grid.Row>

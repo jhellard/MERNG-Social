@@ -86,6 +86,7 @@ module.exports = {
         username,
         password,
         createdAt: new Date().toISOString(),
+        stars: 0,
       });
 
       const res = await newUser.save();
